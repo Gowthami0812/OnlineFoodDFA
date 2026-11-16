@@ -1992,3 +1992,309 @@ footer p {
     grid-column: 1 / -1;
   }
 }
+
+/* =========================================================
+   FOODFLOW FINAL RESPONSIVE POLISH
+   Additive overrides: preserves existing project styles
+   ========================================================= */
+
+/* Consistent sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(36, 122, 75, 0.28);
+  outline-offset: 3px;
+}
+
+/* Food menu */
+.food-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.food-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+}
+
+.food-art {
+  flex-shrink: 0;
+}
+
+.food-card > :not(.food-art) {
+  min-width: 0;
+}
+
+.food-category {
+  overflow-wrap: anywhere;
+}
+
+/* Order tracking */
+.tracking-form {
+  width: 100%;
+  min-width: 0;
+}
+
+.tracking-form input {
+  min-width: 0;
+}
+
+.tracking-result,
+.tracking-result-heading,
+.tracking-order-info,
+.tracking-items,
+.history-list {
+  min-width: 0;
+}
+
+.tracking-result-heading {
+  flex-wrap: wrap;
+}
+
+.tracking-result-heading > * {
+  min-width: 0;
+}
+
+.tracking-result-heading h3 {
+  overflow-wrap: anywhere;
+}
+
+.status-pill {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.tracking-progress {
+  min-width: 0;
+}
+
+.progress-step {
+  min-width: 0;
+}
+
+.progress-step span:last-child {
+  line-height: 1.45;
+}
+
+.tracking-item > *,
+.tracking-items > div > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.tracking-order-info > div,
+.admin-order-details > div {
+  min-width: 0;
+}
+
+.tracking-order-info strong,
+.admin-order-details strong {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Admin dashboard */
+.admin-stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.stat-card {
+  min-width: 0;
+}
+
+.stat-card > * {
+  min-width: 0;
+}
+
+.admin-orders-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.admin-order-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.admin-card-footer {
+  flex-wrap: wrap;
+}
+
+.admin-card-footer > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.status-update-button {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.admin-order-details {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dfa-note > * {
+  min-width: 0;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-orders-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .tracking-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .tracking-form .form-field,
+  .tracking-form input,
+  .tracking-form .primary-button,
+  .tracking-form button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tracking-progress {
+    gap: 4px;
+    margin: 24px 0;
+  }
+
+  .progress-step {
+    gap: 7px;
+  }
+
+  .progress-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .progress-step:not(:last-child)::after {
+    top: 17px;
+    left: calc(50% + 20px);
+    width: calc(100% - 32px);
+  }
+
+  .progress-step span:last-child {
+    font-size: 0.68rem;
+  }
+
+  .tracking-order-info {
+    grid-template-columns: 1fr 1fr;
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .admin-card-footer {
+    align-items: flex-start;
+  }
+}
+
+/* Narrow phones */
+@media (max-width: 460px) {
+  .food-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .food-art {
+    min-height: 160px;
+  }
+
+  .food-emoji {
+    font-size: 5rem;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    gap: 9px;
+    padding: 13px;
+  }
+
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .stat-card strong {
+    font-size: 1.2rem;
+  }
+
+  .admin-order-card {
+    padding: 16px;
+  }
+
+  .admin-order-details {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .tracking-order-info {
+    grid-template-columns: 1fr;
+  }
+
+  .tracking-result-heading {
+    gap: 10px;
+  }
+
+  .last-order-banner {
+    min-width: 0;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
