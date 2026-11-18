@@ -1,6 +1,6 @@
 
 import React from "react";
-
+import "./DFAPage.css";
 const states = [
   { id: "q0", name: "PLACED" },
   { id: "q1", name: "PREPARING" },
