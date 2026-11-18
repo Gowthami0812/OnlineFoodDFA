@@ -1,4 +1,4 @@
-
+import DFAPage from "./DFAPage.jsx";
 import { useCallback, useEffect, useState } from "react";
 import {
   UtensilsCrossed,
@@ -680,6 +680,13 @@ function App() {
         </a>
 
         <nav className="main-nav">
+          <button
+  className={`nav-link ${activeTab === "dfa" ? "active" : ""}`}
+  onClick={() => setActiveTab("dfa")}
+  type="button"
+>
+  DFA Diagram
+</button>
           <button
             className={`nav-link ${activeTab === "menu" ? "active" : ""}`}
             onClick={() => setActiveTab("menu")}
@@ -1492,7 +1499,11 @@ function App() {
           )}
         </section>
       )}
-
+      {activeTab === "dfa" && (
+  <section className="section-block">
+    <DFAPage />
+  </section>
+)}
       <footer className="site-footer">
         <div className="footer-brand">
           <UtensilsCrossed size={19} />
