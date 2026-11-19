@@ -3,77 +3,90 @@
 .dfa-page {
   width: 100%;
   padding: 24px;
-  box-sizing: border-box;
-  background: #f4f7fb !important;
+  border-radius: 18px;
+  background: #f5f8fc !important;
   color: #1e293b !important;
-  border-radius: 14px;
-  font-family: Arial, sans-serif;
+  font-family: 'DM Sans', Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.dfa-page *,
+.dfa-page *::before,
+.dfa-page *::after {
+  box-sizing: border-box;
 }
 
 .dfa-page .dfa-heading {
-  margin-bottom: 24px;
+  margin: 0 0 28px;
   text-align: center;
-  color: #12325b !important;
 }
 
 .dfa-page .dfa-heading h1 {
-  color: #12325b !important;
-  font-size: 32px;
+  margin: 8px 0;
+  color: #163b65 !important;
+  font-size: clamp(26px, 4vw, 36px);
 }
 
 .dfa-page .dfa-heading p {
-  color: #475569 !important;
+  color: #52647a !important;
 }
 
 .dfa-page .dfa-label {
-  font-weight: 700;
-  letter-spacing: 2px;
+  color: #176b45 !important;
   font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
-/* Cards: matches DFAPage.jsx */
+/* Cards */
 .dfa-page .dfa-card {
   width: 100%;
   margin: 22px 0;
-  padding: 22px;
-  box-sizing: border-box;
-  background: #ffffff !important;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid #dce5ef;
+  border-radius: 16px;
+  background: #fff !important;
   color: #1e293b !important;
-  border: 1px solid #dbe4f0;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.07);
+  box-shadow: 0 6px 22px rgba(15, 42, 72, 0.06);
 }
 
 .dfa-page .dfa-card h2 {
-  margin: 0 0 16px;
-  color: #173b70 !important;
-  font-size: 22px;
+  margin: 0 0 14px;
+  color: #163b65 !important;
+  font-size: 21px;
 }
 
-.dfa-page .dfa-description {
-  color: #475569 !important;
-  line-height: 1.7;
+.dfa-page .dfa-description,
+.dfa-page .dfa-rule p {
+  color: #52647a !important;
+  line-height: 1.8;
 }
 
-/* Diagram container */
+/* Diagram viewport */
 .dfa-page .dfa-diagram-scroll {
   width: 100%;
+  max-width: 100%;
+  margin-top: 18px;
   overflow-x: auto;
-  background: #ffffff !important;
-  border-radius: 10px;
+  overflow-y: hidden;
+  border: 1px solid #e0e8f2;
+  border-radius: 12px;
+  background: #fff !important;
 }
 
 .dfa-page svg.dfa-svg {
   display: block;
   width: 100%;
-  min-width: 900px;
+  min-width: 1000px;
   height: auto;
-  background: #ffffff !important;
+  background: #fff !important;
+  color: #1e293b;
 }
 
-/* SVG states: explicitly override global styles */
+/* State circles */
 .dfa-page svg.dfa-svg .dfa-state {
-  fill: #dbeafe !important;
+  fill: #e1efff !important;
   stroke: #2563eb !important;
   stroke-width: 3px !important;
 }
@@ -90,45 +103,52 @@
   stroke-width: 2px !important;
 }
 
-/* State labels */
-.dfa-page svg.dfa-svg .dfa-state-id {
+/* SVG labels: override any global text fill */
+.dfa-page svg.dfa-svg text.dfa-state-id {
   fill: #1d4ed8 !important;
   font-family: Arial, sans-serif;
   font-size: 17px !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
 }
 
-.dfa-page svg.dfa-svg .dfa-state-name {
+.dfa-page svg.dfa-svg text.dfa-state-name {
   fill: #172554 !important;
   font-family: Arial, sans-serif;
   font-size: 10px !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
 }
 
-.dfa-page svg.dfa-svg .dfa-svg-title {
-  fill: #173b70 !important;
+.dfa-page svg.dfa-svg text.dfa-svg-title {
+  fill: #163b65 !important;
   font-size: 18px !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
 }
 
-.dfa-page svg.dfa-svg .dfa-svg-note,
-.dfa-page svg.dfa-svg .dfa-svg-final-note {
+.dfa-page svg.dfa-svg text.dfa-svg-note,
+.dfa-page svg.dfa-svg text.dfa-svg-final-note {
   fill: #334155 !important;
   font-size: 15px !important;
+  font-weight: 600 !important;
 }
 
-/* Transition arrows and input labels */
-.dfa-page svg.dfa-svg .dfa-arrow,
-.dfa-page svg.dfa-svg .dfa-start-arrow {
+.dfa-page svg.dfa-svg text.dfa-input {
+  fill: #b45309 !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+}
+
+/* Arrows */
+.dfa-page svg.dfa-svg path.dfa-arrow,
+.dfa-page svg.dfa-svg path.dfa-start-arrow {
   fill: none !important;
   stroke: #2563eb !important;
   stroke-width: 2.5px !important;
 }
 
-.dfa-page svg.dfa-svg .dfa-input {
-  fill: #b45309 !important;
-  font-size: 17px !important;
-  font-weight: 700 !important;
+/* Arrowhead marker */
+.dfa-page svg.dfa-svg marker path {
+  fill: #2563eb !important;
+  stroke: #2563eb !important;
 }
 
 /* Legend */
@@ -136,89 +156,130 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px 22px;
+  gap: 10px;
   margin-top: 18px;
-  color: #334155 !important;
-  line-height: 1.6;
 }
 
 .dfa-page .dfa-legend span {
+  padding: 9px 13px;
+  border: 1px solid #dce8f6;
+  border-radius: 9px;
   background: #eff6ff;
-  padding: 8px 12px;
-  border-radius: 7px;
+  color: #334155 !important;
+  font-size: 13px;
 }
 
-/* Transition table */
+/* Table viewport */
 .dfa-page .dfa-table-scroll {
   width: 100%;
+  max-width: 100%;
+  margin-top: 16px;
   overflow-x: auto;
-  margin-top: 12px;
-  border-radius: 8px;
+  border: 1px solid #dbe4ef;
+  border-radius: 12px;
+  background: #fff;
 }
 
+/* Table layout */
 .dfa-page table.dfa-table {
   width: 100%;
-  min-width: 720px;
-  border-collapse: collapse;
-  table-layout: auto;
-  background: #ffffff !important;
+  min-width: 760px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  background: #fff !important;
   color: #1e293b !important;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-.dfa-page table.dfa-table th {
-  padding: 14px;
-  background: #173b70 !important;
-  color: #ffffff !important;
-  border: 1px solid #173b70;
-  text-align: left;
-  white-space: nowrap;
-}
-
+.dfa-page table.dfa-table th,
 .dfa-page table.dfa-table td {
-  padding: 13px 14px;
-  background: #ffffff !important;
-  color: #1e293b !important;
-  border: 1px solid #d5deea;
+  padding: 14px 12px;
+  border-right: 1px solid #e0e7ef;
+  border-bottom: 1px solid #e0e7ef;
   text-align: left;
   vertical-align: middle;
   line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.dfa-page table.dfa-table th:last-child,
+.dfa-page table.dfa-table td:last-child {
+  border-right: 0;
+}
+
+.dfa-page table.dfa-table th {
+  background: #173b70 !important;
+  color: #fff !important;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dfa-page table.dfa-table tbody td {
+  background: #fff !important;
+  color: #25364b !important;
 }
 
 .dfa-page table.dfa-table tbody tr:nth-child(even) td {
-  background: #f1f5f9 !important;
+  background: #f4f7fb !important;
+}
+
+.dfa-page table.dfa-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Keep columns balanced */
+.dfa-page table.dfa-table th:nth-child(1),
+.dfa-page table.dfa-table td:nth-child(1) {
+  width: 25%;
+}
+
+.dfa-page table.dfa-table th:nth-child(2),
+.dfa-page table.dfa-table td:nth-child(2) {
+  width: 15%;
+}
+
+.dfa-page table.dfa-table th:nth-child(3),
+.dfa-page table.dfa-table td:nth-child(3) {
+  width: 27%;
+}
+
+.dfa-page table.dfa-table th:nth-child(4),
+.dfa-page table.dfa-table td:nth-child(4) {
+  width: 33%;
 }
 
 .dfa-page table.dfa-table code {
   display: inline-block;
-  padding: 4px 8px;
+  padding: 4px 9px;
+  border-radius: 6px;
   background: #dbeafe;
-  color: #1d4ed8;
-  border-radius: 5px;
-  font-weight: 700;
+  color: #1d4ed8 !important;
+  font-weight: 800;
 }
 
 .dfa-page table.dfa-table td.dfa-rejected {
   color: #b91c1c !important;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* Formal definition */
 .dfa-page .dfa-formula {
-  padding: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
   background: #eff6ff;
   color: #173b70 !important;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 21px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
 .dfa-page ul.dfa-definition {
   padding: 18px 18px 18px 42px;
-  background: #f8fafc !important;
-  color: #334155 !important;
   border-left: 4px solid #2563eb;
-  border-radius: 8px;
+  border-radius: 10px;
+  background: #f5f8fc !important;
+  color: #334155 !important;
   line-height: 2;
 }
 
@@ -226,9 +287,8 @@
   color: #334155 !important;
 }
 
-.dfa-page .dfa-rule p {
-  color: #334155 !important;
-  line-height: 1.8;
+.dfa-page .dfa-rule {
+  border-left: 4px solid #176b45;
 }
 
 /* Responsive */
@@ -238,18 +298,18 @@
   }
 
   .dfa-page .dfa-card {
-    padding: 14px;
-  }
-
-  .dfa-page .dfa-heading h1 {
-    font-size: 26px;
+    padding: 15px;
   }
 
   .dfa-page .dfa-card h2 {
-    font-size: 19px;
+    font-size: 18px;
+  }
+
+  .dfa-page svg.dfa-svg {
+    min-width: 1000px;
   }
 
   .dfa-page table.dfa-table {
-    min-width: 720px;
+    min-width: 760px;
   }
 }
